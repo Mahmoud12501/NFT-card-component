@@ -1,0 +1,127 @@
+*{
+    -webkit-box-sizing:border-box ;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+}
+:root{
+    --main-bg:hsl(217, 54%, 11%);
+    --card-bg: hsl(216, 50%, 16%);
+    --line:hsl(215, 32%, 27%);
+    --white:hsl(0, 0%, 100%);
+    --cayne:hsl(178, 100%, 50%);
+    --baby-blue:hsl(214.94deg 51.63% 70%);
+    --main-margin:1rem
+
+    
+}
+body{
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    background-color: var(--main-bg);
+}
+.card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--card-bg);
+    padding: 1.25rem;
+    margin-bottom:1.25rem ;
+    border-radius: 10px;
+    box-shadow: 0 0 0 black;
+}
+.card .img:hover::before {
+    content: "";
+    position: absolute;
+    top:1.25rem;
+    left: 1.25rem;
+    width:260px;
+    height: 260px;
+    border-radius: 5px;
+    background-color: hsla(178, 100%, 50%, 0.5);
+    cursor: pointer;
+}
+.card .img:hover::after{
+    content: url(../images/icon-view.svg);
+    position: absolute;
+    top:25%;
+    left:50%;
+    transform: translateX(-50%);
+  
+}
+.card img{
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: var(--main-margin);
+}
+.card  h3{
+    color: var(--white);
+    margin-bottom: var(--main-margin);
+
+}
+.card h3:hover{
+    color: var(--cayne);
+    cursor: pointer;
+}
+
+.card p:first-of-type{
+    color: var(--baby-blue);
+    margin-bottom: var(--main-margin);
+
+}
+.card ul{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    padding-bottom:1rem;
+}
+.card ul li:first-child{
+    color: var(--cayne);
+}
+.card ul li:first-child::before{
+    content: url(../images/icon-ethereum.svg);
+    padding-right: .3rem;
+}
+.card ul li:last-child{
+    color: var(--baby-blue);
+}
+.card ul li:last-child::before{
+    content: url(../images/icon-clock.svg);
+    padding-right: .3rem;
+}.card .foot{
+    display: flex;
+    align-items: center;
+    font-size: .9rem;
+}
+.card .foot img{
+    height: 25px;
+    margin: 0;
+    margin-right: .625rem;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+   
+}
+
+.card p:last-child{
+    color: var(--baby-blue);
+    margin-top: var(--main-margin);
+}
+.card  span:first-child{
+    color: var(--white);
+}
+.card span:hover{
+    color: var(--cayne);
+    cursor: pointer;
+}
+
+
+@media(min-width:375px){
+    .card {
+        width: 300px;
+       
+    }
+}
